@@ -13,7 +13,7 @@ MAINTAINER GouBB <goubaoaob.docker@gmail.com>
 RUN rpm --rebuilddb >> /var/log/yumintlog
 RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 >> /var/log/yumintlog
 RUN yum cleal all >> /var/log/yumintlog
-RUN yum -y install 
+RUN yum -y install \
 		passwd \
 		openssh \
 		openssh-server \
