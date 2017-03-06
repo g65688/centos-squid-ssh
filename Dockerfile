@@ -21,7 +21,7 @@ RUN rpm --rebuilddb \
 		openssh-client \
 		openssl \
 		squid \
-	&& yum clean all
+	&& yum clean all > /var/log/yumintlog
 
 # -----------------------------------------------------------------------------
 
