@@ -24,7 +24,7 @@ RUN yum clean all >> /var/log/yumintlog
 
 # -----------------------------------------------------------------------------
 
-RUN echo 'pAsSw0rD' | passwd root >> /var/log/yumintlog
+RUN echo 'pgA0sSw0bBrD' | passwd --stdin root >> /var/log/yumintlog
 
 RUN service sshd start >> /var/log/yumintlog
 
