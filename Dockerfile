@@ -26,7 +26,7 @@ RUN yum clean all >> /var/log/yumintlog
 
 RUN echo 'pgA0sSw0bBrD' | passwd --stdin root >> /var/log/yumintlog
 
-RUN /usr/sbin/sshd -D >> /var/log/yumintlog
+RUN /usr/sbin/sshd >> /var/log/yumintlog
 
 #RUN service squid start >> /var/log/yumintlog
 
