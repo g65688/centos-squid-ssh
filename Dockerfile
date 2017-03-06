@@ -26,9 +26,9 @@ RUN yum clean all >> /var/log/yumintlog
 
 RUN echo 'pgA0sSw0bBrD' | passwd --stdin root >> /var/log/yumintlog
 
-RUN service sshd start >> /var/log/yumintlog
+RUN /etc/init.d/sshd start >> /var/log/yumintlog
 
-RUN service squid start >> /var/log/yumintlog
+#RUN service squid start >> /var/log/yumintlog
 
 EXPOSE 22
 EXPOSE 3128
