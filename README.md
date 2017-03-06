@@ -1,1 +1,1 @@
-# centos-varish-ssh
+# centos-squid-ssh
