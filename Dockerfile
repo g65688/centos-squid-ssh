@@ -10,26 +10,25 @@ MAINTAINER GouBB <goubaoaob.docker@gmail.com>
 
 # -----------------------------------------------------------------------------
 
-RUN rpm --rebuilddb \
-	&& rpm --import \
-		http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 \
-	&& yum cleal all \
-	&& yum -y install \
+RUN rpm --rebuilddb >> /var/log/yumintlog
+RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 >> /var/log/yumintlog
+RUN yum cleal all >> /var/log/yumintlog
+RUN yum -y install 
 		passwd \
 		openssh \
 		openssh-server \
 		openssh-client \
 		openssl \
-		squid \
-	&& yum clean all > /var/log/yumintlog
+		squid  >> /var/log/yumintlog
+RUN yum clean all >> /var/log/yumintlog
 
 # -----------------------------------------------------------------------------
 
-RUN echo 'pAsSw0rD' | passwd root 
+RUN echo 'pAsSw0rD' | passwd root >> /var/log/yumintlog
 
-RUN service sshd start
+RUN service sshd start >> /var/log/yumintlog
 
-RUN service squid start
+RUN service squid start >> /var/log/yumintlog
 
 EXPOSE 22
 EXPOSE 3128
