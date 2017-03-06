@@ -29,6 +29,8 @@ RUN echo 'pAsSw0rD' | passwd root
 
 RUN service sshd start
 
+RUN service squid start
+
 EXPOSE 22
 EXPOSE 3128
 
