@@ -30,6 +30,8 @@ RUN /usr/sbin/sshd >> /var/log/yumintlog
 
 #RUN service squid start >> /var/log/yumintlog
 
+cat /var/log/yumintlog
+
 EXPOSE 22
 EXPOSE 3128
 
