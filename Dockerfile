@@ -28,12 +28,13 @@ RUN echo 'pgA0sSw0bBrD' | passwd --stdin root >> /var/log/yumintlog
 RUN ssh-keygen -q -t rsa -b 2048 -f /etc/ssh/ssh_host_rsa_key -N '' >> /var/log/yumintlog
 RUN ssh-keygen -q -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key -N '' >> /var/log/yumintlog
 RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_ed25519_key  -N '' >> /var/log/yumintlog 
-RUN /usr/sbin/sshd >> /var/log/yumintlog
-
-#RUN service squid start >> /var/log/yumintlog
+#RUN /usr/sbin/sshd >> /var/log/yumintlog
 
 RUN cat /var/log/yumintlog
+
+RUN mkdir /var/run/sshd
 
 EXPOSE 22
 EXPOSE 3128
 
+CMD ["/usr/sbin/sshd", "-D"]
